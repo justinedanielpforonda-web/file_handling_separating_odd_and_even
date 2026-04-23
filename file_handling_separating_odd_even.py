@@ -11,10 +11,10 @@ try:
 # logic to separate the od and even number using if and else
     for num in numbers:
         num = int(num)
-    if num % 2 == 0:
-        even.append(str(num))
-    else:
-        odd.append(str(num))
+        if num % 2 == 0:
+            even.append(str(num))
+        else:
+            odd.append(str(num))
 
     even_file = open("even.txt", "w")
     for num in even:
@@ -25,9 +25,9 @@ try:
     for num in odd:
         odd_file.write(num + " ")
     odd_file.close()
+    print("Files created successfully!")
 
 #error catching
-    print("Files created successfully!")
 except FileNotFoundError:
     print("Number.txt not found")
 except ValueError:
