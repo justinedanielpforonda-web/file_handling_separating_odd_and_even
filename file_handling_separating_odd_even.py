@@ -4,6 +4,8 @@ try:
     data = file.read()
     numbers = data.split()
     file.close()
+    data = data.replace(",", "")
+    numbers = data.split()
 
     even = []
     odd = []
@@ -15,6 +17,8 @@ try:
             even.append(str(num))
         else:
             odd.append(str(num))
+    even.sort()
+    odd.sort()
 
     even_file = open("even.txt", "w")
     for num in even:
